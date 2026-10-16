@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="603.0" prefWidth="350.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.mycompany.estacionamento.TarifaController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="392.0" style="-fx-background-color: #000000;">
+          <children>
+              <Button fx:id="proceedToPayment" layoutX="75.0" layoutY="418.0" mnemonicParsing="false" onAction="#proceedToPaymentClick" prefHeight="60.0" prefWidth="246.0" style="-fx-background-color: #FF6400; fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12;" text="PROSSEGUIR  PAGAMENTO" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font name="Century Gothic Bold" size="18.0" />
+                  </font>
+              </Button>
+      
+              <ImageView fitHeight="210.0" fitWidth="284.0" layoutX="98.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                      <Image url="@Gemini_Generated_Image_6eeaxw6eeaxw6eea.jpg" />
+                  </image>
+              </ImageView>
+      
+              <Button fx:id="cancelAction" layoutX="74.0" layoutY="505.0" mnemonicParsing="false" onAction="#cancelActionClick" prefHeight="60.0" prefWidth="246.0" style="-fx-background-color: #FF6400; fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12;" text="CANCELAR" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font name="Century Gothic Bold" size="18.0" />
+                  </font>
+              </Button>
+      
+              <TextField fx:id="ticketCode" layoutX="179.0" layoutY="268.0" onAction="#ticketCodeInsert" />
+              <TextField fx:id="campoTotalHoras" layoutX="179.0" layoutY="315.0" />
+              <TextField fx:id="campoValorTotal" layoutX="179.0" layoutY="360.0" />
+      
+              <Label layoutX="70.0" layoutY="263.0" text="DIGITE O CÓDIGO" textFill="WHITE" />
+              <Label layoutX="70.0" layoutY="319.0" text="TOTAL DE HORAS " textFill="WHITE" />
+              <Label layoutX="70.0" layoutY="364.0" text="VALOR TOTAL" textFill="WHITE" />
+              <Label layoutX="70.0" layoutY="276.0" text="      DO TICKET" textFill="WHITE" />
+          </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

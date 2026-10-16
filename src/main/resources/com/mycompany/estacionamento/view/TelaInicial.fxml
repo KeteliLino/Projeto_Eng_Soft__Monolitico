@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="597.0" prefWidth="380.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.mycompany.estacionamento.TelaInicialController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="392.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="177.0" fitWidth="385.0" layoutY="277.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@TABELA%20DE%20PREÇOS.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="startService" layoutX="80.0" layoutY="490.0" mnemonicParsing="false" onAction="#startServiceClick" prefHeight="60.0" prefWidth="233.0" style="-fx-background-color: #FF6400; fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12;" text="INICIAR ATENDIMENTO" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="210.0" fitWidth="284.0" layoutX="98.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Gemini_Generated_Image_6eeaxw6eeaxw6eea.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

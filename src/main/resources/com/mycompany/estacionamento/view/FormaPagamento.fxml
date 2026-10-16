@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="603.0" prefWidth="375.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.mycompany.estacionamento.FormaPagamentoController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="392.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button fx:id="cancelAction" layoutX="41.0" layoutY="540.0" mnemonicParsing="false" onAction="#cancelActionClick" prefHeight="45.0" prefWidth="133.0" style="-fx-background-color: #FF6400; fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12;" text="CANCELAR" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="210.0" fitWidth="284.0" layoutX="98.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Gemini_Generated_Image_6eeaxw6eeaxw6eea.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="107.0" layoutY="256.0" text="FORMA DE PAGAMENTO" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="goPay" layoutX="219.0" layoutY="540.0" mnemonicParsing="false" onAction="#goPayClick" prefHeight="45.0" prefWidth="133.0" style="-fx-background-color: #FF6400; fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12;" text="PAGAR" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="twoReais" layoutX="21.0" layoutY="355.0" mnemonicParsing="false" onAction="#twoReaisClick" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="2 REAIS" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@2.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="fiveReais" layoutX="21.0" layoutY="413.0" mnemonicParsing="false" onAction="#fiveReaisClick" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="5 REAIS" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@5.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="tenReais" layoutX="21.0" layoutY="473.0" mnemonicParsing="false" onAction="#tenReaisClick" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="10 REAIS" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@10.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="fiftyReais" layoutX="202.0" layoutY="354.0" mnemonicParsing="false" onAction="#fiftyReaisClick" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="50 REAIS" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@50.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="hundredReais" layoutX="202.0" layoutY="413.0" mnemonicParsing="false" onAction="#hundredReaisClick" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="100 REAIS" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@100.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="twentyReais" layoutX="202.0" layoutY="295.0" mnemonicParsing="false" onAction="#twentyReaisClick" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="20 REAIS" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@20.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="oneReal" layoutX="21.0" layoutY="295.0" mnemonicParsing="false" onAction="#oneRealClick" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="1 REAL" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@1.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="twoHundredReais" layoutX="202.0" layoutY="473.0" mnemonicParsing="false" onAction="#twoHundredReaisClick" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="200 REAIS" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@200.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
