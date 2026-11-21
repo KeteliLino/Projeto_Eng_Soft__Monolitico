@@ -4,7 +4,7 @@ Projeto da disciplina de **Engenharia de Software III**: totem de autoatendiment
 desenvolvido em Java como um **monólito em camadas** (interface, regras de negócio e persistência
 em um único processo), aplicando os padrões GoF **Facade**, **State** e **Strategy**.
 
-**Equipe:** Augusto Barbosa (github: https://github.com/nicolasferr06 ), 
+**Equipe:** Augusto Barbosa (github: https://github.com/AugustoBarbosa-Zotake ), 
 Jéssica Soares (github: https://github.com/JeehSilphis ), 
 Keteli Lino (github: https://github.com/KeteliLino ) e 
 Nicolas Borges (github: https://github.com/nicolasferr06 ).
