@@ -5,7 +5,7 @@
 | **Versão do documento** | 1.2 |
 | **Data** | 20/11/2026 |
 | **Autor(es)** | Equipe: Augusto Barbosa (github: https://github.com/AugustoBarbosa-Zotake ), Jéssica Soares (github: https://github.com/JeehSilphis ), Keteli Lino (github: https://github.com/KeteliLino ) e Nicolas Borges (github: https://github.com/nicolasferr06 ) |
-| **Status** | Em revisão |
+| **Status** | Pronto |
 | **Aprovado por** | Augusto Barbosa |
 
 ## Histórico de Revisões
