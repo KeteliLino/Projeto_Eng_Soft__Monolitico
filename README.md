@@ -26,15 +26,19 @@ em um único processo), aplicando os padrões GoF **Facade**, **State** e **Stra
 O Operador de Caixa usa o **mesmo totem**, desbloqueado por um código de autorização. O totem volta a
 ficar bloqueado após cada ação, e toda ação é registrada em log (operador, ticket, ação e data/hora).
 
-![Diagrama de casos de uso](docs/imagens/CASODEUSOMONO.jpg)
+## Tela inicial do totem
+
+<p align="center">
+  <img src="docs/imagens/TelaInicialTotem.png" alt="Tela inicial do totem de estacionamento com a tabela de preços" width="320">
+</p>
 
 ## Tabela de preços
 
 | Tarifa | Valor |
 |---|---|
 | Avulso | R$ 18,00 até 2 h; depois R$ 4,50/h cobrados em frações de 15 min (R$ 1,125 por fração) |
-| Diária (06h–18h) | R$ 50,00 |
-| Pernoite (18h–06h) | R$ 50,00 |
+| Diária (06h–18h) | R$ 50,00 por até 12 h; o que passar é cobrado a R$ 4,50/h em frações de 15 min |
+| Pernoite (18h–06h) | R$ 50,00 por até 12 h; o que passar é cobrado a R$ 4,50/h em frações de 15 min |
 | Mensalista | R$ 300,00 uma vez por mês (cobrado na primeira saída do mês) |
 | Convênio | 10% de desconto sobre a tarifa avulsa |
 | Carência | Permanência de até 15 min não é cobrada (avulso e convênio) |
@@ -75,7 +79,7 @@ O banco de dados é criado automaticamente na pasta `dados/` na primeira execuç
 mvn test
 ```
 
-- **72 testes** em 5 classes: `TarifaAvulsaStrategyTest`, `TicketStateTest`, `EstacionamentoFacadeTest`,
+- **85 testes** em 5 classes: `TarifaAvulsaStrategyTest`, `TicketStateTest`, `EstacionamentoFacadeTest`,
   `NFTest` e `VeiculoDaoTest` — todos aprovados.
 - Cobertura (JaCoCo): **88% das linhas** nas classes de domínio. Relatório gerado em
   `target/site/jacoco/index.html`.

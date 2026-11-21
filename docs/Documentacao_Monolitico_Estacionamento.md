@@ -71,7 +71,7 @@ O sistema controla a permanência de veículos em um estacionamento. Na entrada,
 
 ### 2.2 Dentro do escopo (In Scope)
 - Registro de entrada do veículo com horário (ticket).
-- Cálculo do valor por tarifa: avulso (2 primeiras horas + adicional por hora/fração), diária (06h–18h), pernoite (18h–06h) e mensalista (uma vez por mês).
+- Cálculo do valor por tarifa: avulso (2 primeiras horas + adicional por hora/fração), diária (06h–18h) e pernoite (18h–06h), cada uma cobrindo 12 h com excedente em frações de 15 min, e mensalista (uma vez por mês).
 - Registro de pagamento em dinheiro (valor devido, valor recebido e troco).
 - Emissão de comprovante e de nota fiscal (com CPF, quando informado).
 - Liberação da saída após pagamento.
@@ -176,7 +176,7 @@ O sistema controla a permanência de veículos em um estacionamento. Na entrada,
 - **Critérios de aceite:**
   - [ ] Até 2 h → R$ 18,00.
   - [ ] 2 h 30 min → R$ 18,00 + 2 frações = R$ 20,25.
-  - [ ] Pernoite → R$ 50,00; diária → R$ 50,00.
+  - [ ] Pernoite e diária até 12 h → R$ 50,00; 16 h → R$ 50,00 + 16 frações = R$ 68,00.
   - [ ] Mensalista → R$ 300,00 na primeira saída do mês; R$ 0,00 nas demais saídas do mesmo mês.
 - **Requisitos relacionados:** RN-01 a RN-07, RF-08
 
@@ -417,7 +417,7 @@ O sistema controla a permanência de veículos em um estacionamento. Na entrada,
 | RN-01 | Tarifa avulsa: R$ 18,00 para permanência de até 2 horas. | `Tarifa.avulso = 18.00` (premissa: cobre 2 h) | RF-02, RF-08 |
 | RN-02 | Após 2 horas: R$ 4,50 por hora adicional, cobrada em frações de 15 minutos (R$ 1,125 por fração iniciada; total arredondado a 2 casas). | `valorHoraApos2h = 4.50`, `valorFracao15min` | RF-02 |
 | RN-03 | Mensalista: R$ 300,00 pagos uma vez por mês — cobrados na primeira saída do mês; nas demais saídas do mesmo mês não há cobrança, e o mensalista não paga tarifa avulsa. | `Tarifa.mensalista = 300.00` | RF-08 |
-| RN-04 | Pernoite: R$ 50,00 fixos para o período noturno (18:00h–06:00h). O tipo é escolhido pelo motorista na entrada (ou corrigido pelo Operador de Caixa, RF-11); o sistema não confere o horário. | `Tarifa.pernoite = 50.00` | RF-08 |
+| RN-04 | Pernoite: R$ 50,00 para o período noturno (18:00h–06:00h, 12 h); acima de 12 h, o excedente é cobrado a R$ 4,50/h em frações de 15 min (R$ 1,125 por fração iniciada). O tipo é escolhido pelo motorista na entrada (ou corrigido pelo Operador de Caixa, RF-11); o sistema não confere o horário. | `Tarifa.pernoite = 50.00` | RF-08 |
 | RN-05 | A cancela só é liberada se o ticket estiver **Pago** e dentro do prazo de saída. Tickets Em Aberto, Aguardando Pagamento ou Expirados não liberam a saída. | Padrão State; UC "Liberar Saída" | RF-06 |
 | RN-06 | Após o pagamento, o motorista tem uma tolerância para sair de 15 min; excedida, o ticket fica **Expirado** e é cobrado o período adicional. | Padrão State | RF-06 |
 | RN-07 | Isenção por carência: permanência até 15 minutos não é cobrada (vale para as tarifas avulsa e convênio). | Padrão Strategy (`IsencaoCarenciaStrategy`) | RF-02 |
@@ -426,7 +426,7 @@ O sistema controla a permanência de veículos em um estacionamento. Na entrada,
 | RN-10 | O horário de saída não pode ser anterior ao horário de entrada; um veículo não pode ter dois tickets em aberto. | `registrarSaidaManualmente`, `setHorarioSaida` | RF-01, RF-07, RF-09 |
 | RN-11 | Um ticket só pode ser pago uma vez. | Padrão State (`PagoState` recusa novo pagamento) | RF-03 |
 | RN-12 | Ações do Operador de Caixa (registrar entrada sem ticket, ajustar o horário de saída e alterar a tarifa) só podem ser feitas no totem desbloqueado por código de autorização válido. O horário de entrada nunca é alterado pelo operador. O modo de ajuste é encerrado ao fim de cada ação, cada ação é registrada em log com operador, ticket, ação e data/hora, e o pagamento é sempre feito pelo motorista no totem — o ajuste não libera a saída. | UC-05, UC-06 (`<<extend>>`) e UC-07; ator Operador de Caixa | RF-07, RF-09, RF-10, RF-11 |
-| RN-13 | Diária: R$ 50,00 fixos para o período diurno (06:00h–18:00h). O tipo é escolhido pelo motorista na entrada (ou corrigido pelo Operador de Caixa, RF-11); o sistema não confere o horário. | `TarifaDiariaStrategy` | RF-08 |
+| RN-13 | Diária: R$ 50,00 para o período diurno (06:00h–18:00h, 12 h); acima de 12 h, o excedente é cobrado a R$ 4,50/h em frações de 15 min (R$ 1,125 por fração iniciada). O tipo é escolhido pelo motorista na entrada (ou corrigido pelo Operador de Caixa, RF-11); o sistema não confere o horário. | `TarifaDiariaStrategy` | RF-08 |
 | RN-14 | O pagamento é aceito somente em dinheiro; o sistema não usa APIs externas (cartão/PIX). Valor inserido menor que o devido é recusado; valor maior gera troco. | Decisão de projeto; `Cobranca` | RF-03 |
 
 ---
@@ -734,12 +734,18 @@ classDiagram
     }
     class TarifaPernoiteStrategy {
         -double valor = 50.00
+        -int minutosPeriodo = 720
+        -double valorHoraExcedente = 4.50
+        -double valorFracao15min = 1.125
     }
     class TarifaMensalistaStrategy {
         -double valorMensal = 300.00
     }
     class TarifaDiariaStrategy {
         -double valor = 50.00
+        -int minutosPeriodo = 720
+        -double valorHoraExcedente = 4.50
+        -double valorFracao15min = 1.125
     }
     class TarifaConvenioStrategy {
         -double percentualDesconto
@@ -879,7 +885,7 @@ sequenceDiagram
 
 | Padrão GoF | Categoria | Problema que resolve no projeto | Classes / arquivos envolvidos |
 |---|---|---|---|
-| Strategy | Comportamental | Elimina cadeias de `if/else` no cálculo do valor por tempo e perfil; novas tarifas sem alterar o caixa. | `TarifaStrategy`, `TarifaAvulsaStrategy`, `TarifaPernoiteStrategy`, `TarifaMensalistaStrategy`, `TarifaDiariaStrategy` (R$ 50, 06h–18h), `TarifaConvenioStrategy`, `IsencaoCarenciaStrategy` |
+| Strategy | Comportamental | Elimina cadeias de `if/else` no cálculo do valor por tempo e perfil; novas tarifas sem alterar o caixa. | `TarifaStrategy`, `TarifaAvulsaStrategy`, `TarifaPernoiteStrategy`, `TarifaMensalistaStrategy`, `TarifaDiariaStrategy` (R$ 50 por 12 h + excedente), `TarifaConvenioStrategy`, `IsencaoCarenciaStrategy` |
 | State | Comportamental | Garante transições rígidas do ticket e impede a abertura da cancela em estados inválidos. | `Ticket`, `TicketState`, `EmAbertoState`, `AguardandoPagamentoState`, `PagoState`, `ExpiradoState`, `FinalizadoState` |
 | Facade | Estrutural | Oferece uma única operação para totem/app/caixa, escondendo a coordenação de ticket, tarifa, pagamento, NF, cancela e vagas. | `EstacionamentoFacade`, `VeiculoDao`, `Cobranca`, `NF`, `Cancela`, `ControleVagas` |
 
@@ -1216,7 +1222,7 @@ public class EstacionamentoFacade {
 
 | Classe testada | Classe de teste (JUnit) | Cenários cobertos | Requisito(s) / Regra(s) relacionado(s) | Resultado |
 |---|---|---|---|---|
-| `TarifaAvulsaStrategy` (e demais estratégias) — cálculo do valor | `TarifaAvulsaStrategyTest` | `@ParameterizedTest` com `@CsvSource`: 30 min → 18,00; 120 min (limite) → 18,00; 121 min → 19,13; 150 min → 20,25; 180 min → 22,50; carência de 10 min → 0,00; pernoite e diária → 50,00; mensalista → 300,00 / 0,00 com o mês pago; convênio −10% | RF-02, RF-08, RN-01 a RN-04, RN-07, RN-08, RN-13, RNF-02 | Aprovado |
+| `TarifaAvulsaStrategy` (e demais estratégias) — cálculo do valor | `TarifaAvulsaStrategyTest` | `@ParameterizedTest` com `@CsvSource`: 30 min → 18,00; 120 min (limite) → 18,00; 121 min → 19,13; 150 min → 20,25; 180 min → 22,50; carência de 10 min → 0,00; pernoite e diária: 720 min → 50,00, 721 min → 51,13, 960 min (16 h) → 68,00; mensalista → 300,00 / 0,00 com o mês pago; convênio −10% | RF-02, RF-08, RN-01 a RN-04, RN-07, RN-08, RN-13, RNF-02 | Aprovado |
 | `Ticket` + estados — ciclo de vida | `TicketStateTest` | Novo ticket em `EmAbertoState`; liberar saída em aberto lança `IllegalStateException` (`assertThrows`); fluxo completo até `FinalizadoState` (`assertInstanceOf`); pagar duas vezes é recusado; saída após tolerância leva a `ExpiradoState`; saída anterior à entrada é recusada | RF-06, RF-07, RN-05, RN-06, RN-10, RN-11 | Aprovado |
 | `EstacionamentoFacade` — orquestração | `EstacionamentoFacadeTest` | Pagamento aprovado: `verify(dao).registraPagamento`, `verify(cancela).abrir()`; pagamento recusado: `verify(cancela, never()).abrir()` e ticket não fica Pago; estratégia correta escolhida pelo perfil; ações do operador (código inválido, entrada manual, ajuste de saída, alteração de tarifa). `@Mock`, `@InjectMocks`, `@BeforeEach` | RF-03, RF-04, RF-06, RF-07, RF-09 a RF-11, RN-05, RN-09, RN-12 | Aprovado |
 | `NF` — nota fiscal | `NFTest` | NF com CPF válido; NF sem CPF (CPF `null` permitido); CPF inválido lança exceção; valores herdados do pagamento; dinheiro com troco; forma diferente de dinheiro recusada | RF-04, RN-09, RN-14, RNF-L02 | Aprovado |
@@ -1249,19 +1255,19 @@ class TicketStateTest {
 }
 ```
 
-**Execução:** `mvn test` (ou pela IDE: *Run Tests*). **Resultado em 20/11/2026: 72 testes, 72 aprovados, 0 reprovados** (`EstacionamentoFacadeTest` 21, `TarifaAvulsaStrategyTest` 19, `TicketStateTest` 16, `NFTest` 11, `VeiculoDaoTest` 5). **Cobertura (JaCoCo 0.8.13, relatório em `target/site/jacoco/index.html`):**
+**Execução:** `mvn test` (ou pela IDE: *Run Tests*). **Resultado em 21/11/2026: 85 testes, 85 aprovados, 0 reprovados** (`EstacionamentoFacadeTest` 21, `TarifaAvulsaStrategyTest` 32, `TicketStateTest` 16, `NFTest` 11, `VeiculoDaoTest` 5). **Cobertura (JaCoCo 0.8.13, relatório em `target/site/jacoco/index.html`):**
 
 | Pacote | Linhas cobertas | Desvios (if/else) cobertos |
 |---|---|---|
 | `domain` | 90% (169/188) | 77% |
 | `domain.estado` | 88% (57/65) | 88% |
-| `domain.tarifa` | 82% (37/45) | 90% |
+| `domain.tarifa` | 80% (47/59) | 92% |
 | `facade` | 86% (114/133) | 75% |
 | `dao` | 82% (143/174) | 94% |
 | `service` | 66% (21/32) | 57% |
 | `ui` (telas JavaFX) | 0% (sem testes automatizados; verificadas pelos casos CT-XX no totem) | 0% |
 
-Classes de domínio (`domain`, `domain.estado` e `domain.tarifa`): **88% das linhas (263/298)** — atende ao RNF-06 (≥ 70%). Sem a camada de telas, a cobertura do sistema é de 85% das linhas.
+Classes de domínio (`domain`, `domain.estado` e `domain.tarifa`): **88% das linhas (273/312)** — atende ao RNF-06 (≥ 70%). Sem a camada de telas, a cobertura do sistema é de 85% das linhas.
 
 ### 7.2 Ambientes de teste
 
@@ -1282,7 +1288,7 @@ Classes de domínio (`domain`, `domain.estado` e `domain.tarifa`): **88% das lin
 | CT-02 | RF-01, RN-10 | Entrada duplicada | Veículo já com ticket aberto | 1. Informar a mesma placa | Novo ticket recusado | A executar |
 | CT-03 | RF-02, RN-01 | Avulso até 2 h (inclusive limite de 120 min) | Ticket com 30 min / 120 min | 1. Solicitar pagamento | R$ 18,00 | A executar |
 | CT-04 | RF-02, RN-02 | Avulso acima de 2 h | Ticket com 150 min / 180 min | 1. Solicitar pagamento | R$ 20,25 / R$ 22,50 | A executar |
-| CT-05 | RF-08, RN-04 | Pernoite | Ticket de pernoite | 1. Solicitar pagamento | R$ 50,00 | A executar |
+| CT-05 | RF-08, RN-04 | Pernoite | Ticket de pernoite com 10 h / 16 h | 1. Solicitar pagamento | R$ 50,00 / R$ 68,00 (excedente de 4 h em frações de 15 min) | A executar |
 | CT-06 | RF-08, RN-03 | Mensalista | Motorista mensalista com a mensalidade do mês já paga | 1. Solicitar saída | Sem cobrança (R$ 0,00); saída liberada | A executar |
 | CT-07 | RF-02, RN-07 | Isenção por carência | Ticket dentro da carência | 1. Solicitar pagamento | R$ 0,00 | A executar |
 | CT-08 | RF-03, RF-04, RF-05, RF-06 | Pagamento aprovado | Ticket Aguardando Pagamento | 1. Pagar 2. Informar CPF | Comprovante e NF emitidos; ticket Pago; cancela aberta | A executar |
@@ -1298,7 +1304,7 @@ Classes de domínio (`domain`, `domain.estado` e `domain.tarifa`): **88% das lin
 | CT-18 | RF-03, RF-04, RF-05 | Pagamento em dinheiro no totem com troco | Ticket Aguardando Pagamento com valor de R$ 20,25 | 1. Motorista seleciona a forma de pagamento "Dinheiro" no totem 2. Insere R$ 50,00 | Troco de R$ 29,75 entregue; pagamento registrado; ticket Pago; comprovante e NF emitidos | A executar |
 | CT-19 | RF-10, RN-12 | Código de autorização inválido | Totem em operação normal | 1. Informar um código de autorização inválido no totem | Mensagem de erro; totem continua bloqueado para ajustes; nenhum horário alterado | A executar |
 | CT-20 | RF-11, RN-12 | Alteração de tarifa pelo operador | Ticket avulso Em Aberto; operador com código válido | 1. Operador informa o código 2. Digita a placa 3. Escolhe a nova tarifa | Horário de entrada exibido e inalterado; tarifa alterada; valor recalculado; registro `ALTERACAO_TARIFA` em log; totem bloqueado | A executar |
-| CT-21 | RF-08, RN-13 | Diária | Ticket de diária | 1. Solicitar pagamento | R$ 50,00 | A executar |
+| CT-21 | RF-08, RN-13 | Diária | Ticket de diária com 10 h / 16 h | 1. Solicitar pagamento | R$ 50,00 / R$ 68,00 (excedente de 4 h em frações de 15 min) | A executar |
 | CT-22 | RF-08, RN-03 | Mensalidade uma vez por mês | Mensalista sem pagamento no mês | 1. Primeira saída do mês 2. Nova entrada e saída no mesmo mês | 1ª saída: R$ 300,00; 2ª saída: R$ 0,00 | A executar |
 | CT-23 | RF-03, RN-14 | Somente dinheiro | Ticket Aguardando Pagamento | 1. Tentar pagar com forma diferente de dinheiro | Pagamento recusado; o totem oferece apenas a inserção de notas | A executar |
 
@@ -1326,7 +1332,7 @@ Classes de domínio (`domain`, `domain.estado` e `domain.tarifa`): **88% das lin
 | RN-07 | Carência | CT-07 | `domain/tarifa/IsencaoCarenciaStrategy.java` | Concluído | Aprovado (JUnit) |
 | RN-11 | Pagamento único | CT-11 | `domain/estado/PagoState.java` | Concluído | Aprovado (JUnit) |
 | RN-03 | Mensalidade uma vez por mês | CT-06, CT-22 | `domain/tarifa/TarifaMensalistaStrategy.java`, `dao/VeiculoDao.java` | Concluído | Aprovado (JUnit) |
-| RN-13 | Diária R$ 50 (06h–18h) | CT-21 | `domain/tarifa/TarifaDiariaStrategy.java` | Concluído | Aprovado (JUnit) |
+| RN-13 | Diária R$ 50 (06h–18h) + excedente | CT-21 | `domain/tarifa/TarifaDiariaStrategy.java` | Concluído | Aprovado (JUnit) |
 | RN-14 | Somente dinheiro | CT-18, CT-23 | `domain/Pagamento.java`, `service/Cobranca.java` | Concluído | Aprovado (JUnit) |
 | RN-12 | Ações do operador só com código de autorização, com log; entrada nunca alterada; pagamento sempre pelo motorista | CT-15, CT-16, CT-19, CT-20 | `facade/EstacionamentoFacade.java` | Concluído | Aprovado (JUnit) |
 | RNF-02 | Corretude monetária | CT-03, CT-04 | `domain/tarifa/*Strategy.java` | Concluído | Aprovado (JUnit) |
@@ -1345,7 +1351,7 @@ Classes de domínio (`domain`, `domain.estado` e `domain.tarifa`): **88% das lin
 |---|---|
 | Ticket | Registro da permanência de um veículo, com horário de entrada e saída. |
 | Avulso | Motorista sem contrato, que paga pelo tempo de permanência. |
-| Pernoite | Permanência no período noturno (18h–06h), com tarifa fixa de R$ 50,00. |
+| Pernoite | Permanência no período noturno (18h–06h): R$ 50,00 por até 12 h, mais o excedente em frações de 15 min. |
 | Mensalista | Motorista com contrato mensal de valor fixo. |
 | Fração | Período de 15 minutos usado para cobrar o tempo após as 2 primeiras horas. |
 | Carência | Tempo inicial isento de cobrança. |
@@ -1354,7 +1360,7 @@ Classes de domínio (`domain`, `domain.estado` e `domain.tarifa`): **88% das lin
 | Operador de Caixa | Funcionário que desbloqueia o totem com o seu código de autorização para registrar entradas sem ticket, ajustar o horário de saída e alterar a tarifa. Não altera o horário de entrada e não recebe pagamentos. |
 | Código de autorização | Código pessoal do Operador de Caixa que libera o modo de ajuste do totem, como a senha de supervisor usada em caixas de autoatendimento. |
 | Modo de ajuste | Estado temporário do totem, liberado pelo código de autorização, em que o operador registra entrada sem ticket, ajusta a saída ou altera a tarifa; encerra-se ao fim de cada ação. |
-| Diária | Permanência no período diurno (06h–18h), com tarifa fixa de R$ 50,00. |
+| Diária | Permanência no período diurno (06h–18h): R$ 50,00 por até 12 h, mais o excedente em frações de 15 min. |
 | `<<extend>>` | Relação de caso de uso em que o caso estendido (ex.: saída manual) só ocorre em condições específicas, acrescentando comportamento ao caso base. |
 | NF | Nota fiscal emitida ao final do pagamento. |
 | Monólito | Aplicação em que todas as camadas rodam em um único processo/executável. |

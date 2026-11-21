@@ -38,11 +38,12 @@ class TarifaAvulsaStrategyTest {
         assertEquals(esperado, comCarencia.calcular(TicketFactory.comPermanencia(minutos)), 0.001);
     }
 
-    @Test
-    @DisplayName("CT-05 - pernoite cobra R$ 50,00 (RN-04)")
-    void pernoite() {
-        assertEquals(50.00, new TarifaPernoiteStrategy()
-                .calcular(TicketFactory.comPermanencia(600, TipoMotorista.PERNOITE)), 0.001);
+    @ParameterizedTest(name = "pernoite: {0} min -> R$ {1}")
+    @CsvSource({ "30, 50.00", "600, 50.00", "720, 50.00", "721, 51.13", "736, 52.25", "780, 54.50", "960, 68.00" })
+    @DisplayName("CT-05 - pernoite: R$ 50,00 por 12 h + excedente em frações de 15 min (RN-04)")
+    void pernoite(long minutos, double esperado) {
+        assertEquals(esperado, new TarifaPernoiteStrategy()
+                .calcular(TicketFactory.comPermanencia(minutos, TipoMotorista.PERNOITE)), 0.001);
     }
 
     @Test
@@ -64,12 +65,12 @@ class TarifaAvulsaStrategyTest {
         assertThrows(IllegalArgumentException.class, () -> new TarifaConvenioStrategy(tarifa, 120));
     }
 
-    @Test
-    @DisplayName("Diária (06h-18h) cobra R$ 50,00")
-    void diaria() {
+    @ParameterizedTest(name = "diária: {0} min -> R$ {1}")
+    @CsvSource({ "30, 50.00", "600, 50.00", "720, 50.00", "721, 51.13", "735, 51.13", "736, 52.25", "780, 54.50", "960, 68.00" })
+    @DisplayName("CT-21 - diária: R$ 50,00 por 12 h + excedente em frações de 15 min (RN-13)")
+    void diaria(long minutos, double esperado) {
         TarifaStrategy diaria = new TarifaDiariaStrategy();
-        assertEquals(50.00, diaria.calcular(TicketFactory.comPermanencia(30, TipoMotorista.DIARIA)), 0.001);
-        assertEquals(50.00, diaria.calcular(TicketFactory.comPermanencia(600, TipoMotorista.DIARIA)), 0.001);
+        assertEquals(esperado, diaria.calcular(TicketFactory.comPermanencia(minutos, TipoMotorista.DIARIA)), 0.001);
     }
 
     @Test
