@@ -1,0 +1,68 @@
+<mxfile host="Electron">
+  <diagram id="est" name="State - Diagrama de estados">
+    <mxGraphModel dx="1495" dy="725" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1520" pageHeight="380" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="est_ini" parent="1" style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="30" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="est_EA" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=12;" value="EmAberto" vertex="1">
+          <mxGeometry height="50" width="130" x="120" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="est_AP" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=12;" value="AguardandoPagamento" vertex="1">
+          <mxGeometry height="50" width="190" x="500" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="est_PG" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=12;" value="Pago" vertex="1">
+          <mxGeometry height="50" width="110" x="920" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="est_FI" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=12;" value="Finalizado" vertex="1">
+          <mxGeometry height="50" width="130" x="1270" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="est_fim" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="1450" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="est_EX" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=12;" value="Expirado" vertex="1">
+          <mxGeometry height="50" width="130" x="735" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="est_e1" edge="1" parent="1" source="est_ini" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;fontSize=11;labelBackgroundColor=#ffffff;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;endSize=10;" target="est_EA" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="est_e2" edge="1" parent="1" source="est_EA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;fontSize=11;labelBackgroundColor=#ffffff;exitX=1.0;exitY=0.3;exitDx=0;exitDy=0;entryX=0.0;entryY=0.3;entryDx=0;entryDy=0;endArrow=open;endFill=0;endSize=10;verticalAlign=bottom;" target="est_AP" value="solicitarPagamento / calcula valor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="est_e3" edge="1" parent="1" source="est_AP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.0;exitY=0.7;exitDx=0;exitDy=0;entryX=1.0;entryY=0.7;entryDx=0;entryDy=0;endArrow=open;endFill=0;endSize=10;verticalAlign=top;" target="est_EA" value="pagamento cancelado">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="est_e4" edge="1" parent="1" source="est_AP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;fontSize=11;labelBackgroundColor=#ffffff;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;endSize=10;verticalAlign=bottom;" target="est_PG" value="confirmarPagamento">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="est_e5" edge="1" parent="1" source="est_PG" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;fontSize=11;labelBackgroundColor=#ffffff;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;endSize=10;verticalAlign=bottom;" target="est_FI" value="liberarSaida [dentro da tolerância]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="est_e6" edge="1" parent="1" source="est_FI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;fontSize=11;labelBackgroundColor=#ffffff;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;endSize=10;" target="est_fim" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="est_e7" edge="1" parent="1" source="est_PG" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=1.0;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;endSize=10;" target="est_EX" value="tolerância de saída excedida">
+          <mxGeometry relative="1" x="0.4035" y="15" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="975" y="305" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="est_e8" edge="1" parent="1" source="est_EX" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1.0;entryDx=0;entryDy=0;endArrow=open;endFill=0;endSize=10;" target="est_AP" value="cobrança complementar">
+          <mxGeometry relative="1" x="-0.5238" y="15" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="595" y="305" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="est_lbl1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;" value="registrarEntrada" vertex="1">
+          <mxGeometry height="20" width="110" x="30" y="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

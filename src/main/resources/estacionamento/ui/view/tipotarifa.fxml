@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="392.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estacionamento.ui.TipoTarifaController">
+    <children>
+        <Button fx:id="proceedToPayment" layoutX="75.0" layoutY="418.0" mnemonicParsing="false" onAction="#proceedToPaymentClick" prefHeight="60.0" prefWidth="246.0" style="-fx-background-color: #FF6400; -fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12;" text="PROSSEGUIR  PAGAMENTO" textAlignment="CENTER" textFill="WHITE">
+            <font><Font name="Century Gothic Bold" size="18.0" /></font>
+        </Button>
+        <ImageView fitHeight="210.0" fitWidth="284.0" layoutX="98.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+            <image><Image url="@logo.jpg" /></image>
+        </ImageView>
+        <Button fx:id="cancelAction" layoutX="74.0" layoutY="505.0" mnemonicParsing="false" onAction="#cancelActionClick" prefHeight="60.0" prefWidth="246.0" style="-fx-background-color: #FF6400; -fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12;" text="CANCELAR" textAlignment="CENTER" textFill="WHITE">
+            <font><Font name="Century Gothic Bold" size="18.0" /></font>
+        </Button>
+        <TextField fx:id="ticketCode" layoutX="179.0" layoutY="268.0" onAction="#ticketCodeInsert" prefWidth="110.0" promptText="Nº ou placa" />
+        <Button fx:id="consultar" layoutX="295.0" layoutY="268.0" mnemonicParsing="false" onAction="#ticketCodeInsert" prefHeight="25.0" prefWidth="40.0" style="-fx-background-color: #FF6400; -fx-background-radius: 6;" text="OK" textFill="WHITE">
+            <font><Font name="System Bold" size="11.0" /></font>
+        </Button>
+        <TextField fx:id="campoTotalHoras" editable="false" focusTraversable="false" layoutX="179.0" layoutY="315.0" />
+        <TextField fx:id="campoValorTotal" editable="false" focusTraversable="false" layoutX="179.0" layoutY="360.0" />
+        <Label layoutX="70.0" layoutY="263.0" text="DIGITE O CÓDIGO" textFill="WHITE" />
+        <Label layoutX="70.0" layoutY="319.0" text="TOTAL DE HORAS " textFill="WHITE" />
+        <Label layoutX="70.0" layoutY="364.0" text="VALOR TOTAL" textFill="WHITE" />
+        <Label layoutX="70.0" layoutY="276.0" text="      DO TICKET" textFill="WHITE" />
+        <Label alignment="CENTER" layoutY="392.0" prefWidth="392.0" text="(DIGITE O NÚMERO DO TICKET OU A PLACA E TOQUE EM OK)" textFill="#AAAAAA">
+            <font><Font size="10.0" /></font>
+        </Label>
+    </children>
+</AnchorPane>

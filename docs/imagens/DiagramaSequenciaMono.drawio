@@ -1,0 +1,569 @@
+<mxfile host="Electron">
+  <diagram id="seqMono" name="Diagrama de Sequência - Estacionamento">
+    <mxGraphModel dx="2823" dy="912" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1340" pageHeight="2360" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="LM" parent="1" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=nowrap;html=1;container=0;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;portConstraint=eastwest;size=40;labelBackgroundColor=none;fontStyle=1;" value="Motorista" vertex="1">
+          <mxGeometry height="2280" width="20" x="50" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LOP" parent="1" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=nowrap;html=1;container=0;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;portConstraint=eastwest;size=40;labelBackgroundColor=none;fontStyle=1;" value="Operador de Caixa" vertex="1">
+          <mxGeometry height="2280" width="20" x="190" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LT" parent="1" style="shape=umlLifeline;participant=umlBoundary;perimeter=lifelinePerimeter;whiteSpace=nowrap;html=1;container=0;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;portConstraint=eastwest;size=40;labelBackgroundColor=none;fontStyle=1;" value="Totem" vertex="1">
+          <mxGeometry height="2280" width="50" x="365" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LV" parent="1" style="shape=umlLifeline;participant=umlBoundary;perimeter=lifelinePerimeter;whiteSpace=nowrap;html=1;container=0;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;portConstraint=eastwest;size=40;labelBackgroundColor=none;fontStyle=1;" value="Veiculo" vertex="1">
+          <mxGeometry height="2280" width="50" x="595" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LD" parent="1" style="shape=umlLifeline;participant=umlEntity;perimeter=lifelinePerimeter;whiteSpace=nowrap;html=1;container=0;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;portConstraint=eastwest;size=40;labelBackgroundColor=none;fontStyle=1;" value="VeiculoDao" vertex="1">
+          <mxGeometry height="2280" width="40" x="840" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LC" parent="1" style="shape=umlLifeline;participant=umlEntity;perimeter=lifelinePerimeter;whiteSpace=nowrap;html=1;container=0;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;portConstraint=eastwest;size=40;labelBackgroundColor=none;fontStyle=1;" value="Cobrança" vertex="1">
+          <mxGeometry height="2280" width="40" x="1040" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LNF" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=30;fontStyle=0;" value=":NotaFiscal" vertex="1">
+          <mxGeometry height="1580" width="100" x="1180" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="sd" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=260;height=30;fontStyle=1;labelBackgroundColor=none;" value="sd Sistema de Estacionamento" vertex="1">
+          <mxGeometry height="2340" width="1670" x="-350" as="geometry" />
+        </mxCell>
+        <mxCell id="t1" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=12;labelBackgroundColor=none;" value="1) Registrar Entrada — UC-01 (Motorista)" vertex="1">
+          <mxGeometry height="24" width="600" x="-344" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="150" width="10" x="55" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="150" width="10" x="385" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="115" width="10" x="615" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="50" width="10" x="855" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="m6" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="1: informadadosVeiculo">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="150" as="sourcePoint" />
+            <mxPoint x="385" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="2: registraVeiculo(dados)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="395" y="180" as="sourcePoint" />
+            <mxPoint x="615" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="3: registraVeiculo()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="210" as="sourcePoint" />
+            <mxPoint x="855" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m9" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="4: confirmaRegistro()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="855" y="240" as="sourcePoint" />
+            <mxPoint x="625" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m10" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="5: retornaDados()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="615" y="270" as="sourcePoint" />
+            <mxPoint x="395" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t11" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=12;labelBackgroundColor=none;" value="2) Solicitar pagamento / calcular valor — UC-02 (Motorista)" vertex="1">
+          <mxGeometry height="24" width="600" x="-344" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="a12" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="235" width="10" x="55" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="a13" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="235" width="10" x="385" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="a14" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="195" width="10" x="615" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="a15" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="50" width="10" x="855" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="m16" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="6: solicitaPagamento">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="350" as="sourcePoint" />
+            <mxPoint x="385" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m17" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="7: dadosTicket()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="395" y="380" as="sourcePoint" />
+            <mxPoint x="615" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m18" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="8: consultaTicket()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="410" as="sourcePoint" />
+            <mxPoint x="855" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m19" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="9: retornaConsulta()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="855" y="440" as="sourcePoint" />
+            <mxPoint x="625" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m20" edge="1" parent="1" style="html=1;align=left;spacingLeft=4;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="10: calculaValor()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="470" />
+              <mxPoint x="660" y="495" />
+            </Array>
+            <mxPoint x="625" y="470" as="sourcePoint" />
+            <mxPoint x="635" y="495" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a21" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="30" width="10" x="620" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="m22" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="11: retornaPreco()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="615" y="525" as="sourcePoint" />
+            <mxPoint x="395" y="525" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m23" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="12: infoPagamento()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="615" y="555" as="sourcePoint" />
+            <mxPoint x="395" y="555" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t24" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=12;labelBackgroundColor=none;" value="3) Pagar, emitir NF e liberar saída — UC-02, UC-03, UC-04 (Motorista)" vertex="1">
+          <mxGeometry height="24" width="600" x="-344" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="a25" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="65" width="10" x="55" y="625" as="geometry" />
+        </mxCell>
+        <mxCell id="a26" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="65" width="10" x="385" y="625" as="geometry" />
+        </mxCell>
+        <mxCell id="a27" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="220" width="10" x="615" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="a28" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="50" width="10" x="1055" y="685" as="geometry" />
+        </mxCell>
+        <mxCell id="a29" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="50" width="10" x="855" y="785" as="geometry" />
+        </mxCell>
+        <mxCell id="a30" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="60" width="10" x="385" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="a31" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="40" width="10" x="1225" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="m32" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="13: insereDinheiro(notas)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="635" as="sourcePoint" />
+            <mxPoint x="385" y="635" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m33" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="14: dadosPagamento(valorRecebido)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="395" y="665" as="sourcePoint" />
+            <mxPoint x="615" y="665" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m34" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="15: processaPagamento()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="695" as="sourcePoint" />
+            <mxPoint x="1055" y="695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m35" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="16: confirmaPagamento()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1055" y="725" as="sourcePoint" />
+            <mxPoint x="625" y="725" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m36" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="&amp;lt;&amp;lt;create&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="755" as="sourcePoint" />
+            <mxPoint x="1180" y="755" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m37" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="17: registraPagamento()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="795" as="sourcePoint" />
+            <mxPoint x="855" y="795" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m38" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="18: atualizaTicket()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="825" as="sourcePoint" />
+            <mxPoint x="855" y="825" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m40" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="19: liberaTicket(troco)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="615" y="865" as="sourcePoint" />
+            <mxPoint x="395" y="865" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m41" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="20: liberaNF()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1225" y="905" as="sourcePoint" />
+            <mxPoint x="395" y="905" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t42" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=12;labelBackgroundColor=none;" value="4) Desbloquear o totem com código de autorização —&lt;div&gt;&amp;nbsp;UC-05 / UC-06 / UC-07 (Operador de Caixa)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="600" x="-340" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="a43" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="255" width="10" x="195" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="a44" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="255" width="10" x="385" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="a45" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="200" width="10" x="615" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="a46" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="50" width="10" x="855" y="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="m47" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="21: informaCodigo(codigo)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="205" y="990" as="sourcePoint" />
+            <mxPoint x="385" y="990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m48" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="22: validaAutorizacao(codigo)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="395" y="1020" as="sourcePoint" />
+            <mxPoint x="615" y="1020" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m49" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="23: consultaOperador(hash(codigo))">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="1050" as="sourcePoint" />
+            <mxPoint x="855" y="1050" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m50" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="24: retornaOperador()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="855" y="1080" as="sourcePoint" />
+            <mxPoint x="625" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="alt1" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=40;height=20;fontStyle=1;labelBackgroundColor=none;" value="alt" vertex="1">
+          <mxGeometry height="145" width="1170" x="140" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="g51" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=2;fontSize=11;labelBackgroundColor=none;" value="[código válido]" vertex="1">
+          <mxGeometry height="20" width="300" x="190" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="m52" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="25: autorizacaoConcedida(operador)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="615" y="1130" as="sourcePoint" />
+            <mxPoint x="395" y="1130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m53" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="26: liberaModoAjuste">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="385" y="1160" as="sourcePoint" />
+            <mxPoint x="205" y="1160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s54" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;rounded=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="1175" as="sourcePoint" />
+            <mxPoint x="1310" y="1175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g55" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=2;fontSize=11;labelBackgroundColor=none;" value="[else: código inválido]" vertex="1">
+          <mxGeometry height="20" width="300" x="145" y="1178" as="geometry" />
+        </mxCell>
+        <mxCell id="m56" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="27: autorizacaoNegada()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="615" y="1205" as="sourcePoint" />
+            <mxPoint x="395" y="1205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m57" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="28: exibeErro">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="385" y="1232" as="sourcePoint" />
+            <mxPoint x="205" y="1232" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t58" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=12;labelBackgroundColor=none;" value="5) Registrar entrada manual (ticket não emitido) — UC-05&lt;div&gt;(Operador de Caixa; horário de entrada = relógio do sistema)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="600" x="-340" y="1260" as="geometry" />
+        </mxCell>
+        <mxCell id="a59" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="30" width="10" x="195" y="1290" as="geometry" />
+        </mxCell>
+        <mxCell id="a60" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="217" width="10" x="385" y="1290" as="geometry" />
+        </mxCell>
+        <mxCell id="a61" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="140" width="10" x="615" y="1320" as="geometry" />
+        </mxCell>
+        <mxCell id="a62" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="85" width="10" x="855" y="1350" as="geometry" />
+        </mxCell>
+        <mxCell id="a63" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="25" width="10" x="55" y="1492" as="geometry" />
+        </mxCell>
+        <mxCell id="m64" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="29: registraEntrada(placa, tipo)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="205" y="1300" as="sourcePoint" />
+            <mxPoint x="385" y="1300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m65" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="30: registraEntradaManual(placa, tipo)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="395" y="1330" as="sourcePoint" />
+            <mxPoint x="615" y="1330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m66" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="31: registraVeiculo()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="1360" as="sourcePoint" />
+            <mxPoint x="855" y="1360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m67" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="32: confirmaRegistro()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="855" y="1390" as="sourcePoint" />
+            <mxPoint x="625" y="1390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m68" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="33: registraLog(ENTRADA_MANUAL)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="1420" as="sourcePoint" />
+            <mxPoint x="855" y="1420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m69" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="34: retornaTicket()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="615" y="1450" as="sourcePoint" />
+            <mxPoint x="395" y="1450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m70" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="35: imprimeTicket">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="385" y="1502" as="sourcePoint" />
+            <mxPoint x="65" y="1502" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t71" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=12;labelBackgroundColor=none;" value="6) Ajustar horário de saída — UC-06 (Operador de Caixa);&lt;div&gt;&amp;nbsp;o Motorista finaliza o pagamento&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="600" x="-340" y="1520" as="geometry" />
+        </mxCell>
+        <mxCell id="a72" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="30" width="10" x="195" y="1550" as="geometry" />
+        </mxCell>
+        <mxCell id="a73" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="345" width="10" x="385" y="1550" as="geometry" />
+        </mxCell>
+        <mxCell id="a74" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="235" width="10" x="615" y="1580" as="geometry" />
+        </mxCell>
+        <mxCell id="a75" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="130" width="10" x="855" y="1610" as="geometry" />
+        </mxCell>
+        <mxCell id="a76" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="25" width="10" x="55" y="1870" as="geometry" />
+        </mxCell>
+        <mxCell id="m77" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="36: ajustaSaida(placa, saida)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="205" y="1560" as="sourcePoint" />
+            <mxPoint x="385" y="1560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m78" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="37: registraSaidaManual(placa, saida)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="395" y="1590" as="sourcePoint" />
+            <mxPoint x="615" y="1590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m79" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="38: consultaTicket()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="1620" as="sourcePoint" />
+            <mxPoint x="855" y="1620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m80" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="39: retornaConsulta()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="855" y="1650" as="sourcePoint" />
+            <mxPoint x="625" y="1650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m81" edge="1" parent="1" style="html=1;align=left;spacingLeft=4;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="40: registrarSaidaManualmente(saida)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="1670" />
+              <mxPoint x="660" y="1695" />
+            </Array>
+            <mxPoint x="625" y="1670" as="sourcePoint" />
+            <mxPoint x="635" y="1695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a82" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="30" width="10" x="620" y="1680" as="geometry" />
+        </mxCell>
+        <mxCell id="m83" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="41: registraLog(SAIDA_MANUAL)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="1725" as="sourcePoint" />
+            <mxPoint x="855" y="1725" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m84" edge="1" parent="1" style="html=1;align=left;spacingLeft=4;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="42: calculaValor()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="1745" />
+              <mxPoint x="660" y="1770" />
+            </Array>
+            <mxPoint x="625" y="1745" as="sourcePoint" />
+            <mxPoint x="635" y="1770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a85" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="30" width="10" x="620" y="1755" as="geometry" />
+        </mxCell>
+        <mxCell id="m86" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="43: retornaPreco()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="615" y="1805" as="sourcePoint" />
+            <mxPoint x="395" y="1805" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m87" edge="1" parent="1" style="html=1;align=left;spacingLeft=4;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="44: encerraModoAjuste()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="1825" />
+              <mxPoint x="430" y="1850" />
+            </Array>
+            <mxPoint x="395" y="1825" as="sourcePoint" />
+            <mxPoint x="405" y="1850" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a88" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="30" width="10" x="390" y="1835" as="geometry" />
+        </mxCell>
+        <mxCell id="m89" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="45: exibeValor">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="385" y="1885" as="sourcePoint" />
+            <mxPoint x="65" y="1885" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ref1" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=40;height=20;fontStyle=1;labelBackgroundColor=none;" value="ref" vertex="1">
+          <mxGeometry height="45" width="1290" x="20" y="1915" as="geometry" />
+        </mxCell>
+        <mxCell id="reftxt" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="Motorista finaliza o pagamento no totem: mensagens 13 a 20 (bloco 3)" vertex="1">
+          <mxGeometry height="30" width="900" x="200" y="1925" as="geometry" />
+        </mxCell>
+        <mxCell id="t90" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=12;labelBackgroundColor=none;" value="7) Alterar tarifa — UC-07 (Operador de Caixa, com o totem&lt;div&gt;desbloqueado; o horário de entrada é mantido)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="600" x="-340" y="1985" as="geometry" />
+        </mxCell>
+        <mxCell id="a91" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="30" width="10" x="195" y="2015" as="geometry" />
+        </mxCell>
+        <mxCell id="a92" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="260" width="10" x="385" y="2015" as="geometry" />
+        </mxCell>
+        <mxCell id="a93" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="170" width="10" x="615" y="2045" as="geometry" />
+        </mxCell>
+        <mxCell id="a94" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="125" width="10" x="855" y="2075" as="geometry" />
+        </mxCell>
+        <mxCell id="m95" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="46: alteraTarifa(placa, tipo)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="205" y="2025" as="sourcePoint" />
+            <mxPoint x="385" y="2025" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m96" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="47: alteraTipoTarifa(placa, tipo)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="395" y="2055" as="sourcePoint" />
+            <mxPoint x="615" y="2055" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m97" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="48: consultaTicket()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="2085" as="sourcePoint" />
+            <mxPoint x="855" y="2085" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m98" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="49: retornaConsulta()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="855" y="2110" as="sourcePoint" />
+            <mxPoint x="625" y="2110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m99" edge="1" parent="1" style="html=1;align=left;spacingLeft=4;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="50: alterarTipo(tipo)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="2125" />
+              <mxPoint x="660" y="2150" />
+            </Array>
+            <mxPoint x="625" y="2125" as="sourcePoint" />
+            <mxPoint x="635" y="2150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a100" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="30" width="10" x="620" y="2135" as="geometry" />
+        </mxCell>
+        <mxCell id="m101" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="51: atualizaTicket()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="2170" as="sourcePoint" />
+            <mxPoint x="855" y="2170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m102" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="52: registraLog(ALTERACAO_TARIFA)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="2195" as="sourcePoint" />
+            <mxPoint x="855" y="2195" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m103" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="53: retornaTicket()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="615" y="2210" as="sourcePoint" />
+            <mxPoint x="395" y="2210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m104" edge="1" parent="1" style="html=1;align=left;spacingLeft=4;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="54: encerraModoAjuste()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="2225" />
+              <mxPoint x="430" y="2250" />
+            </Array>
+            <mxPoint x="395" y="2225" as="sourcePoint" />
+            <mxPoint x="405" y="2250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a105" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="30" width="10" x="390" y="2235" as="geometry" />
+        </mxCell>
+        <mxCell id="a106" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="25" width="10" x="195" y="2260" as="geometry" />
+        </mxCell>
+        <mxCell id="m107" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;dashed=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="55: exibeTarifaAlterada">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="385" y="2270" as="sourcePoint" />
+            <mxPoint x="205" y="2270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m69b" edge="1" parent="1" style="html=1;align=left;spacingLeft=4;endArrow=block;endFill=1;rounded=0;fontSize=11;labelBackgroundColor=none;" value="34.1: encerraModoAjuste()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="1460" />
+              <mxPoint x="430" y="1480" />
+            </Array>
+            <mxPoint x="395" y="1460" as="sourcePoint" />
+            <mxPoint x="405" y="1480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a69b" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="30" width="10" x="390" y="1468" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

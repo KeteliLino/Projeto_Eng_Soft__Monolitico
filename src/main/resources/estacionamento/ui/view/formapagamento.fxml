@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="392.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estacionamento.ui.FormaPagamentoController">
+   <children>
+      <ImageView fitHeight="210.0" fitWidth="284.0" layoutX="98.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image><Image url="@logo.jpg" /></image>
+      </ImageView>
+      <Label alignment="CENTER" layoutY="250.0" prefWidth="392.0" text="PAGAMENTO EM DINHEIRO - INSIRA AS NOTAS" textFill="WHITE">
+         <font><Font size="15.0" /></font>
+      </Label>
+      <Label fx:id="lblValor" alignment="CENTER" layoutY="283.0" prefWidth="392.0" textFill="#FF6400">
+         <font><Font name="System Bold" size="16.0" /></font>
+      </Label>
+      <Pane fx:id="notas">
+         <children>
+            <Button fx:id="oneReal" layoutX="21.0" layoutY="335.0" mnemonicParsing="false" onAction="#oneRealClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="1 REAL" textFill="WHITE">
+               <graphic><ImageView fitHeight="32.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@nota1.jpg" /></image></ImageView></graphic>
+               <font><Font name="System Bold" size="12.0" /></font>
+            </Button>
+            <Button fx:id="twentyReais" layoutX="202.0" layoutY="335.0" mnemonicParsing="false" onAction="#twentyReaisClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="20 REAIS" textFill="WHITE">
+               <graphic><ImageView fitHeight="32.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@nota20.jpg" /></image></ImageView></graphic>
+               <font><Font name="System Bold" size="12.0" /></font>
+            </Button>
+            <Button fx:id="twoReais" layoutX="21.0" layoutY="379.0" mnemonicParsing="false" onAction="#twoReaisClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="2 REAIS" textFill="WHITE">
+               <graphic><ImageView fitHeight="32.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@nota2.jpg" /></image></ImageView></graphic>
+               <font><Font name="System Bold" size="12.0" /></font>
+            </Button>
+            <Button fx:id="fiftyReais" layoutX="202.0" layoutY="379.0" mnemonicParsing="false" onAction="#fiftyReaisClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="50 REAIS" textFill="WHITE">
+               <graphic><ImageView fitHeight="32.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@nota50.jpg" /></image></ImageView></graphic>
+               <font><Font name="System Bold" size="12.0" /></font>
+            </Button>
+            <Button fx:id="fiveReais" layoutX="21.0" layoutY="423.0" mnemonicParsing="false" onAction="#fiveReaisClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="5 REAIS" textFill="WHITE">
+               <graphic><ImageView fitHeight="32.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@nota5.jpg" /></image></ImageView></graphic>
+               <font><Font name="System Bold" size="12.0" /></font>
+            </Button>
+            <Button fx:id="hundredReais" layoutX="202.0" layoutY="423.0" mnemonicParsing="false" onAction="#hundredReaisClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="100 REAIS" textFill="WHITE">
+               <graphic><ImageView fitHeight="32.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@nota100.jpg" /></image></ImageView></graphic>
+               <font><Font name="System Bold" size="12.0" /></font>
+            </Button>
+            <Button fx:id="tenReais" layoutX="21.0" layoutY="467.0" mnemonicParsing="false" onAction="#tenReaisClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="10 REAIS" textFill="WHITE">
+               <graphic><ImageView fitHeight="32.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@nota10.jpg" /></image></ImageView></graphic>
+               <font><Font name="System Bold" size="12.0" /></font>
+            </Button>
+            <Button fx:id="twoHundredReais" layoutX="202.0" layoutY="467.0" mnemonicParsing="false" onAction="#twoHundredReaisClick" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #FF6400;" text="200 REAIS" textFill="WHITE">
+               <graphic><ImageView fitHeight="32.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@nota200.jpg" /></image></ImageView></graphic>
+               <font><Font name="System Bold" size="12.0" /></font>
+            </Button>
+         </children>
+      </Pane>
+      <Label fx:id="lblInserido" alignment="CENTER" layoutY="513.0" prefWidth="392.0" textFill="WHITE">
+         <font><Font size="12.0" /></font>
+      </Label>
+      <Button fx:id="cancelAction" layoutX="41.0" layoutY="540.0" mnemonicParsing="false" onAction="#cancelActionClick" prefHeight="45.0" prefWidth="133.0" style="-fx-background-color: #FF6400; -fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12;" text="CANCELAR" textAlignment="CENTER" textFill="WHITE">
+         <font><Font name="Century Gothic Bold" size="18.0" /></font>
+      </Button>
+      <Button fx:id="goPay" layoutX="219.0" layoutY="540.0" mnemonicParsing="false" onAction="#goPayClick" prefHeight="45.0" prefWidth="133.0" style="-fx-background-color: #FF6400; -fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12;" text="PAGAR" textAlignment="CENTER" textFill="WHITE">
+         <font><Font name="Century Gothic Bold" size="18.0" /></font>
+      </Button>
+   </children>
+</AnchorPane>

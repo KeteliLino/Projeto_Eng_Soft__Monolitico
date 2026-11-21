@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="392.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estacionamento.ui.ComprovanteController">
+   <children>
+      <ImageView fitHeight="210.0" fitWidth="284.0" layoutX="98.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image><Image url="@logo.jpg" /></image>
+      </ImageView>
+      <Label fx:id="lblTroco" alignment="CENTER" layoutY="246.0" prefWidth="392.0" textAlignment="CENTER" textFill="#FF6400">
+         <font><Font name="System Bold" size="14.0" /></font>
+      </Label>
+      <Label alignment="CENTER" layoutY="292.0" prefWidth="392.0" text="DESEJA IMPRIMIR O COMPROVANTE?" textFill="WHITE">
+         <font><Font size="16.0" /></font>
+      </Label>
+      <RadioButton fx:id="yesPrint" layoutX="111.0" layoutY="322.0" mnemonicParsing="false" onAction="#yesPrintClick" text="SIM" textFill="WHITE" />
+      <RadioButton fx:id="noPrint" layoutX="236.0" layoutY="322.0" mnemonicParsing="false" onAction="#noPrintClick" text="NÃO" textFill="WHITE" />
+      <TextArea fx:id="txtComprovante" editable="false" layoutX="31.0" layoutY="348.0" prefHeight="148.0" prefWidth="330.0" wrapText="true">
+         <font><Font name="Consolas" size="10.0" /></font>
+      </TextArea>
+      <Button fx:id="endTheInteraction" layoutX="69.0" layoutY="505.0" mnemonicParsing="false" onAction="#endTheInteractionClick" prefHeight="60.0" prefWidth="255.0" style="-fx-background-color: #FF6400; -fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12;" text="FINALIZAR ATENDIMENTO" textAlignment="CENTER" textFill="WHITE">
+         <font><Font name="Century Gothic Bold" size="18.0" /></font>
+      </Button>
+   </children>
+</AnchorPane>

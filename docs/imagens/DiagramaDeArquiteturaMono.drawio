@@ -1,0 +1,94 @@
+<mxfile host="Electron">
+  <diagram name="Página-1" id="mEKcGjtoii8A3n3hGweo">
+    <mxGraphModel dx="1246" dy="767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="loNaLZ_gdF2r3DQc299G-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="270" width="980" x="330" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-15" edge="1" parent="1" source="loNaLZ_gdF2r3DQc299G-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="loNaLZ_gdF2r3DQc299G-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="MOTORISTA" vertex="1">
+          <mxGeometry height="30" width="120" x="760" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-16" edge="1" parent="1" source="loNaLZ_gdF2r3DQc299G-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="loNaLZ_gdF2r3DQc299G-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="TOTEM - APRESENTAÇÃO" vertex="1">
+          <mxGeometry height="40" width="120" x="760" y="158" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-17" edge="1" parent="1" source="loNaLZ_gdF2r3DQc299G-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.099;exitY=1;exitDx=0;exitDy=0;defaultLabelBackgroundColor=page;exitPerimeter=0;" target="loNaLZ_gdF2r3DQc299G-5">
+          <mxGeometry relative="1" x="-0.0548" as="geometry">
+            <Array as="points">
+              <mxPoint x="763.9" y="270" />
+              <mxPoint x="440" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-18" edge="1" parent="1" source="loNaLZ_gdF2r3DQc299G-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="loNaLZ_gdF2r3DQc299G-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="785" y="280" />
+              <mxPoint x="590" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-19" edge="1" parent="1" source="loNaLZ_gdF2r3DQc299G-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.385;exitY=1.028;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;exitPerimeter=0;" target="loNaLZ_gdF2r3DQc299G-7">
+          <mxGeometry relative="1" x="-0.1232" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-22" edge="1" parent="1" source="loNaLZ_gdF2r3DQc299G-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;defaultLabelBackgroundColor=page;" target="loNaLZ_gdF2r3DQc299G-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="855" y="270" />
+              <mxPoint x="1210" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="EstacionamentoFacade" vertex="1">
+          <mxGeometry height="30" width="140" x="750" y="229" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="TarifaStrategy" vertex="1">
+          <mxGeometry height="30" width="120" x="380" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Ticket + TicketState" vertex="1">
+          <mxGeometry height="30" width="120" x="530" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Cobrança/Pagamento" vertex="1">
+          <mxGeometry height="30" width="130" x="690" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-23" edge="1" parent="1" source="loNaLZ_gdF2r3DQc299G-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="loNaLZ_gdF2r3DQc299G-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="VeiculoDao" vertex="1">
+          <mxGeometry height="30" width="120" x="850" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Comprovante/NF" vertex="1">
+          <mxGeometry height="30" width="120" x="1000" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Cancela/Controle de Vagas" vertex="1">
+          <mxGeometry height="30" width="120" x="1150" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-11" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="Banco de Dados" vertex="1">
+          <mxGeometry height="80" width="120" x="850" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="APLICAÇÃO MONOLÍTICA - UM ÚNICO PROCESSO JAVA" vertex="1">
+          <mxGeometry height="30" width="360" x="350" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-20" edge="1" parent="1" source="loNaLZ_gdF2r3DQc299G-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.386;entryY=0.133;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;" target="loNaLZ_gdF2r3DQc299G-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="loNaLZ_gdF2r3DQc299G-21" edge="1" parent="1" source="loNaLZ_gdF2r3DQc299G-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.435;entryY=0.133;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;" target="loNaLZ_gdF2r3DQc299G-9">
+          <mxGeometry relative="1" x="0.102" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="259" />
+              <mxPoint x="840" y="280" />
+              <mxPoint x="1052.2" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

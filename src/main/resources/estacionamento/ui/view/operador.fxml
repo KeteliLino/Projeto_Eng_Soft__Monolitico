@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="392.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estacionamento.ui.OperadorController">
+   <children>
+      <ImageView fitHeight="210.0" fitWidth="284.0" layoutX="98.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image><Image url="@logo.jpg" /></image>
+      </ImageView>
+      <Label alignment="CENTER" layoutY="260.0" prefWidth="392.0" text="OPERADOR DE CAIXA" textFill="WHITE">
+         <font><Font size="16.0" /></font>
+      </Label>
+      <Label alignment="CENTER" layoutY="300.0" prefWidth="392.0" text="INFORME O CÓDIGO DE AUTORIZAÇÃO" textFill="WHITE">
+         <font><Font size="12.0" /></font>
+      </Label>
+      <PasswordField fx:id="codigo" layoutX="96.0" layoutY="328.0" onAction="#desbloquearClick" prefWidth="200.0" />
+      <Button fx:id="desbloquear" layoutX="81.0" layoutY="418.0" mnemonicParsing="false" onAction="#desbloquearClick" prefHeight="60.0" prefWidth="233.0" style="-fx-background-color: #FF6400; -fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12;" text="DESBLOQUEAR" textAlignment="CENTER" textFill="WHITE">
+         <font><Font name="Century Gothic Bold" size="18.0" /></font>
+      </Button>
+      <Button fx:id="cancelAction" layoutX="80.0" layoutY="505.0" mnemonicParsing="false" onAction="#cancelActionClick" prefHeight="60.0" prefWidth="233.0" style="-fx-background-color: #FF6400; -fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12;" text="CANCELAR" textAlignment="CENTER" textFill="WHITE">
+         <font><Font name="Century Gothic Bold" size="18.0" /></font>
+      </Button>
+   </children>
+</AnchorPane>
