@@ -4,7 +4,10 @@ Projeto da disciplina de **Engenharia de Software III**: totem de autoatendiment
 desenvolvido em Java como um **monólito em camadas** (interface, regras de negócio e persistência
 em um único processo), aplicando os padrões GoF **Facade**, **State** e **Strategy**.
 
-**Equipe:** Augusto Barbosa, Jéssica Soares, Keteli Lino e Nicolas Borges
+**Equipe:** Augusto Barbosa (github: https://github.com/nicolasferr06 ), 
+Jéssica Soares (github: https://github.com/JeehSilphis ), 
+Keteli Lino (github: https://github.com/KeteliLino ) e 
+Nicolas Borges (github: https://github.com/nicolasferr06 ).
 
 📄 Documentação completa (requisitos, regras de negócio, arquitetura, diagramas e plano de testes):
 [`docs/Documentacao_Monolitico_Estacionamento.md`](docs/Documentacao_Monolitico_Estacionamento.md)
