@@ -51,11 +51,11 @@ O sistema controla a permanência de veículos em um estacionamento. Na entrada,
 
 | Nome / Papel | Responsabilidade | Contato |
 |---|---|---|
-| Product Owner | Definir a tabela de preços e as regras de cobrança | [preencher] |
-| Arquiteto de Software | Definir as camadas do monólito e os padrões GoF | [preencher] |
-| Time de Desenvolvimento | Implementar totem, cálculo de tarifas, pagamento e emissão de documentos | [preencher] |
-| Time de QA | Elaborar e executar testes JUnit e casos de teste CT-XX | [preencher] |
-|  Patrocinador | Administração do estacionamento / shopping | [preencher] |
+| Product Owner | Definir a tabela de preços e as regras de cobrança | — |
+| Arquiteto de Software | Definir as camadas do monólito e os padrões GoF | — |
+| Time de Desenvolvimento | Implementar totem, cálculo de tarifas, pagamento e emissão de documentos | — |
+| Time de QA | Elaborar e executar testes JUnit e casos de teste CT-XX | — |
+|  Patrocinador | Administração do estacionamento / shopping | — |
 | Usuário final | Motorista (uso avulso, pernoite ou mensalista) | — |
 | Operador de Caixa | Desbloquear o totem com código de autorização para registrar entradas sem ticket, ajustar o horário de saída e alterar a tarifa em casos de exceção (não altera o horário de entrada) | — |
 
