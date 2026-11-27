@@ -437,7 +437,8 @@ O sistema controla a permanência de veículos em um estacionamento. Na entrada,
 
 ![Diagrama de casos de uso — Sistema de Pagamento de Estacionamento](imagens/CASODEUSOMONO.jpg)
 
-<!-- Representação textual equivalente (Mermaid):
+<details>
+<summary>Ver código Mermaid do diagrama</summary>
 
 ```mermaid
 flowchart LR
@@ -463,7 +464,9 @@ flowchart LR
     OP --- UC5
     UC5 -. "&lt;&lt;extend&gt;&gt;" .-> UC1
     UC6 -. "&lt;&lt;extend&gt;&gt;" .-> UC4
-```-->
+```
+
+</details>
 
 **Descrição dos atores**
 
@@ -500,30 +503,33 @@ O sistema adota a arquitetura **monolítica em camadas**: todas as camadas são 
 
 ![Diagrama de Arquitetura — Sistema de Pagamento de Estacionamento](imagens/DiagramaDeArquiteturaMono.jpg)
 
-<div style="display: none;">
+<details>
+<summary>Ver código Mermaid do diagrama</summary>
+
 ```mermaid
 flowchart TD
-    M[Motorista] --> T
-    subgraph MONO[Aplicação monolítica - um único processo Java]
-        T[Totem - Apresentação]
-        F[EstacionamentoFacade]
-        TK[Ticket + TicketState]
-        TS[TarifaStrategy]
-        CB[Cobranca / Pagamento]
-        DOC[Comprovante / NF]
-        DAO[VeiculoDao]
-        CAN[Cancela / Controle de vagas]
-        T --> F
-        F --> TK
-        F --> TS
-        F --> CB
-        F --> DOC
-        F --> DAO
-        F --> CAN
-    end
-    DAO --> DB[(Banco de Dados)]
+    M[Motorista] --> T
+    subgraph MONO[Aplicação monolítica - um único processo Java]
+        T[Totem - Apresentação]
+        F[EstacionamentoFacade]
+        TK[Ticket + TicketState]
+        TS[TarifaStrategy]
+        CB[Cobranca / Pagamento]
+        DOC[Comprovante / NF]
+        DAO[VeiculoDao]
+        CAN[Cancela / Controle de vagas]
+        T --> F
+        F --> TK
+        F --> TS
+        F --> CB
+        F --> DOC
+        F --> DAO
+        F --> CAN
+    end
+    DAO --> DB[(Banco de Dados)]
 ```
-</div>
+
+</details>
 
 ### 6.4 Componentes / Módulos
 
@@ -553,7 +559,9 @@ flowchart TD
 
 ![Diagrama de modelo de dados](imagens/DiagramaModeloDadosMono.jpg)
 
-<div style="display: none;">
+<details>
+<summary>Ver código Mermaid do diagrama</summary>
+
 ```mermaid
 erDiagram
     VEICULO ||--o{ TICKET : gera
@@ -612,7 +620,8 @@ erDiagram
         string cpf "opcional"
     }
 ```
-</div>
+
+</details>
 
 ### 6.7 Diagrama de classes
 
@@ -620,8 +629,9 @@ erDiagram
 
 ![Diagrama de classes original — Estacionamento](imagens/Diagrama_Classes_Ticket.jpg)
 
-<div style="display: none;">
-Representação equivalente em Mermaid:
+<details>
+<summary>Ver código Mermaid do diagrama</summary>
+
 ```mermaid
 classDiagram
     class Ticket {
@@ -674,13 +684,16 @@ classDiagram
     Comprovante "1" o-- "1" Pagamento
     Comprovante "1" o-- "1" NF
 ```
-</div>
+
+</details>
 
 **6.7.2 Diagrama completo (domínio + classes do diagrama de sequência + padrões GoF)**
 
 ![Diagrama de classes original — Estacionamento](imagens/DiagramaClassesGoFMono.jpg)
 
-<div style="display: none;">
+<details>
+<summary>Ver código Mermaid do diagrama</summary>
+
 ```mermaid
 classDiagram
     class EstacionamentoFacade {
@@ -809,8 +822,9 @@ classDiagram
     Ticket "1" -- "0..1" Pagamento
     Comprovante "1" o-- "1" Pagamento
     Comprovante <|-- NF
-``
-</div>
+```
+
+</details>
 
 
 **Descrição das principais classes**
@@ -837,8 +851,9 @@ classDiagram
 
 ![Diagrama de sequência original — Estacionamento](imagens/DiagramaSequenciaMono.jpg)
 
-<div style="display: none;">
-Representação equivalente em Mermaid:
+<details>
+<summary>Ver código Mermaid do diagrama</summary>
+
 ```mermaid
 sequenceDiagram
     actor M as Motorista
@@ -874,8 +889,9 @@ sequenceDiagram
     V->>D: 18: atualizaTicket()
     V-->>T: 19: liberaTicket(troco)
     NF->>T: 20: liberaNF()
-``
-</div>
+```
+
+</details>
 
 > Observação: o passo 10 `calculaValor()` é onde a Facade aplica a `TarifaStrategy`; os passos 7, 16 e 18 correspondem às transições de estado do ticket (Em Aberto → Aguardando Pagamento → Pago).
 
@@ -906,7 +922,9 @@ sequenceDiagram
 - **Diagrama de classes do padrão:**
 ![Diagrama de sequência original — Estacionamento](imagens/Diagrama_GoF_Strategy.jpg)
 
-<div style="display: none;">
+<details>
+<summary>Ver código Mermaid do diagrama</summary>
+
 ```mermaid
 classDiagram
     class EstacionamentoFacade {
@@ -946,8 +964,9 @@ classDiagram
     TarifaStrategy <|.. TarifaDiariaStrategy
     TarifaStrategy <|.. TarifaConvenioStrategy
     TarifaStrategy <|.. IsencaoCarenciaStrategy
-``
-</div>
+```
+
+</details>
 
 - **Trecho de código ilustrativo:**
 
@@ -1002,7 +1021,9 @@ public class IsencaoCarenciaStrategy implements TarifaStrategy {
 - **Diagrama de estados (transições):**
 ![Diagrama de Estados — Estacionamento](imagens/Diagrama_GoF_State_Estados.jpg)
 
-<div style="display: none;">
+<details>
+<summary>Ver código Mermaid do diagrama</summary>
+
 ```mermaid
 stateDiagram-v2
     [*] --> EmAberto : registrarEntrada
@@ -1014,12 +1035,15 @@ stateDiagram-v2
     Expirado --> AguardandoPagamento : cobrança complementar
     Finalizado --> [*]
 ```
-</div>
+
+</details>
 
 - **Diagrama de classes do padrão:**
 ![Diagrama de Estados — Estacionamento](imagens/Diagrama_GoF_State_Classes.jpg)
 
-<div style="display: none;">
+<details>
+<summary>Ver código Mermaid do diagrama</summary>
+
 ```mermaid
 classDiagram
     class Ticket {
@@ -1049,7 +1073,8 @@ classDiagram
     TicketState <|.. ExpiradoState
     TicketState <|.. FinalizadoState
 ```
-</div>
+
+</details>
 
 - **Trecho de código ilustrativo:**
 
@@ -1095,7 +1120,9 @@ public class PagoState implements TicketState {
 - **Diagrama de classes do padrão:**
 ![Diagrama de Estados — Estacionamento](imagens/Diagrama_GoF_Facade.jpg)
 
-<div style="display: none;">
+<details>
+<summary>Ver código Mermaid do diagrama</summary>
+
 ```mermaid
 classDiagram
     class Totem
@@ -1124,7 +1151,8 @@ classDiagram
     EstacionamentoFacade --> Cancela
     EstacionamentoFacade --> ControleVagas
 ```
-</div>
+
+</details>
 
 - **Trecho de código ilustrativo:**
 
